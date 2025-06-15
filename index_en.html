@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>João Ferreira - Electrical and Computer Engineer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+    .icon-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .icon {
+      font-size: 3rem;
+      position: relative;
+      color: #f2f2f2;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .icon:hover {
+      transform: scale(1.2);
+    }
+
+    .icon::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: -1.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      opacity: 0;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .icon:hover::after {
+      opacity: 1;
+    }
+  </style>
+
+
+
+</head>
+<body>
+   <header>
+    <nav>
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index_en.html" class="active">João Ferreira</a></li>
+          <li><a href="sobre_en.html">About me</a></li>
+          <li><a href="publicacoes_en.html">Publications</a></li>
+          <li>
+            <div class="nav-buttons">
+              <button id="toggle-theme" class="botao">
+                <i class="fas fa-moon"></i>
+              </button>
+              <button id="toggle-language" class="botao idioma">EN</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro-bloco">
+      <h1>João Ferreira</h1>
+      <p class="localizacao">Viseu, Portugal</p>
+      <p class="intro-texto">
+        <p>Hello, I'm 23 years old and an electrical and computer engineer.</p>
+        <p>Master's degree in Robotics, Control and Artificial Intelligence with subfields of specialization in: Robotics and Autonomous Systems, Cyber-Physical Systems, Computer Vision and Augmented Reality.</p>
+        <p>Master's dissertation: System for the detection of bottle
+ misalignments for a bottle spraying
+ system of a glass manufacturer.
+      </p>
+      <div class="contatos">
+        <a href="https://www.linkedin.com/in/jo%C3%A3o-ferreira-8a9856322/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a href="mailto:joaoferreira6706@hotmail.com" aria-label="Enviar e-mail">
+          <i class="fas fa-envelope fa-2x"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="fade-in">
+      <h2>Academic Background</h2>
+      <ul>
+        <li><strong>Bachelor’s Degree</strong> in Electrical and Computer Engineering<br>
+        <em>September 2019 – July 2022</em><br>
+
+        <li><strong>Master’s Degree</strong> in Electrical and Computer Engineering – Robotics, Control and Artificial Intelligence<br>
+        <em>Specializations:</em> Robotics and Autonomous Systems; Cyber-Physical Systems; Computer Vision and Augmented Reality<br>
+        <em>September 2022 – July 2024</em><br>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Professional Experience</h2>
+      <ul>
+        <li><strong>Junior Researcher</strong> – University of Coimbra, Vidromecânica<br>
+        <em>July 2023 – July 2024</em><br>
+        Development of a computer vision algorithm to detect bottles and identify misalignments. The information was processed and sent to a PLC, integrating into the automation system of a production line.</li>
+
+        <li><strong>Technical Consultant</strong> – Vidromecânica<br>
+        <em>September 2024 – September 2025</em><br>
+        Continuation and evolution of the previous project, aiming to make the algorithm adaptable to different types of bottles and lighting conditions, ensuring continuous 24/7 operation.</li>
+
+        <li><strong>Researcher</strong> – Immersive Systems and Sensory Stimulation Laboratory (IS3L), Institute of Systems and Robotics (ISR)<br>
+        <em>November 2024 – November 2025</em><br>
+        Participation into the GreenAuto project, in collaboration with Stellantis, STREAK, and F.Fonseca. Development of two subprojects:<br>
+        - Programming of a robotic arm for screwing tasks and sticker placement with automatic adaptation to the position of parts.<br>
+        - Creation of a computer vision algorithm to detect watermarks on windshields and to count/classify windshields (front/rear) on a support.</li>
+      </ul>
+    </section>
+
+    <section class="fade-in">
+      <h2>Technical skills</h2>
+      <h3>Programming languages</h3>
+      <div class="icon-container">
+        <div class="icon" data-tooltip="Python">
+          <img src="images/python.png" alt="Python" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="C">
+          <img src="images/c.png" alt="C" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="C++">
+          <img src="images/cpp.png" alt="C++" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Assembly">
+          <img src="images/asm.png" alt="Assembly" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Latex">
+          <img src="images/latex.png" alt="Latex" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Matlab">
+          <img src="images/matlab.png" alt="Matlab" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Ladder">
+          <img src="images/ladder.png" alt="Ladder" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="SQL">
+          <img src="images/sql.png" alt="SQL" style="height: 48px; width: 48px;">
+        </div>
+        <!-- Adiciona aqui mais ícones como quiseres -->
+      </div>
+
+      <h3>Software and tools</h3>
+      <div class="icon-container">
+        <div class="icon" data-tooltip="Visual Studio Code">
+          <img src="images/vscode.png" alt="Visual Studio Code" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="PyCharm">
+          <img src="images/pycharm.png" alt="PyCharm" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Autodesk Fusion 360">
+          <img src="images/fusion360.png" alt="Autodesk Fusion 360" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Arduino">
+          <img src="images/arduino.png" alt="Arduino" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="CX-Programmer">
+          <img src="images/cx.png" alt="CX-Programmer" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Ubuntu">
+          <img src="images/ubuntu.svg" alt="Ubuntu" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Multisim">
+          <img src="images/multisim.jpg" alt="Multisim" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="Simulink">
+          <img src="images/simulink.png" alt="Simulink" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="LabVIEW">
+          <img src="images/labview.webp" alt="LabVIEW" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="TMflow">
+          <img src="images/tm.png" alt="TMflow" style="height: 48px; width: 48px;">
+        </div>
+        <div class="icon" data-tooltip="QT Creator">
+          <img src="images/qt.png" alt="Qt Creator" style="height: 48px; width: 48px;">
+        </div>
+    </section>
+
+    <section class="projetos">
+    <h2>University projects</h2>
+
+    <article class="projeto">
+      <h3>Cyclist led vest</h3>
+      <p>Development of a smart vest for cyclists with multiple functionalities: turn signals; red brake lights; night lights to indicate the cyclist’s presence on the road; and a proximity warning in case a vehicle gets too close to the rear of the bicycle. All of this was implemented using two Arduino boards — one integrated into the vest and the other mounted on the front of the bike.</p>
+      <video controls width="100%" preload="metadata" poster="thumb-ar2.jpg">
+        <source src="videos/projeto1.mp4" type="video/mp4" />
+        Your browser doesn't support the video element.
+      </video>
+    </article>
+
+    <article class="projeto">
+      <h3>Smart Lock</h3>
+      <p>Development of a smart locker that can be unlocked via PIN code, NFC card, or a mobile application, (using an Arduino and multiple electronic components).</p>
+      <video controls width="100%" preload="metadata" poster="thumb-ar1.jpg">
+        <source src="videos/projeto2.mp4" type="video/mp4" />
+        Your browser doesn't support the video element.
+      </video>
+    </article>
+
+    <article class="projeto">
+      <h3>Robotic dog</h3>
+      <p>Creation of a 3D design of a fully functional robotic dog using the fusion360 platform.</p>
+      <video controls width="100%" preload="metadata" poster="thumb-ar2.jpg">
+        <source src="videos/fdsmem.mp4" type="video/mp4" />
+        Your browser doesn't support the video element.
+      </video>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 João Ferreira</p>
+  </footer>
+<script>
+  const toggleBtn = document.getElementById('toggle-theme');
+const icon = toggleBtn.querySelector('i');
+
+// Carrega o estado salvo
+if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light-mode');
+  icon.classList.remove('fa-sun');
+  icon.classList.add('fa-moon');  // Lua no modo light
+} else {
+  icon.classList.remove('fa-moon');
+  icon.classList.add('fa-sun');  // Sol no modo dark
+}
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
+
+  if (isLight) {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');  // Lua no modo light
+    localStorage.setItem('theme', 'light');
+  } else {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');   // Sol no modo dark
+    localStorage.setItem('theme', 'dark');
+  }
+});
+</script>
+<script>
+  const languageButton = document.getElementById('toggle-language');
+
+  function isEnglishPage() {
+    return window.location.pathname.includes('_en');
+  }
+
+  function getBaseFileName(path) {
+    return path.split('/').pop().replace('_en', '').replace('.html', '');
+  }
+
+  function switchLanguage() {
+    const base = getBaseFileName(window.location.pathname);
+    if (isEnglishPage()) {
+      localStorage.setItem('language', 'pt');
+      window.location.href = `${base}.html`;
+    } else {
+      localStorage.setItem('language', 'en');
+      window.location.href = `${base}_en.html`;
+    }
+  }
+
+  if (languageButton) {
+    languageButton.textContent = isEnglishPage() ? 'PT' : 'EN';
+    languageButton.addEventListener('click', switchLanguage);
+  }
+
+  // Redirecionamento automático ao entrar numa página
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language');
+    const base = getBaseFileName(window.location.pathname);
+
+    if (savedLang === 'en' && !isEnglishPage()) {
+      window.location.href = `${base}_en.html`;
+    }
+
+    if (savedLang === 'pt' && isEnglishPage()) {
+      window.location.href = `${base}.html`;
+    }
+  });
+</script>
+</body>
+</html>

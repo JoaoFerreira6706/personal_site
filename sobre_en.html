@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About me - João Ferreira</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index_en.html">João Ferreira</a></li>
+          <li><a href="sobre_en.html"class="active">About me</a></li>
+          <li><a href="publicacoes_en.html">Publications</a></li>
+          <li>
+            <div class="nav-buttons">
+              <button id="toggle-theme" class="botao">
+                <i class="fas fa-moon"></i>
+              </button>
+              <button id="toggle-language" class="botao idioma">EN</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+  <section class="fade-in">
+    <h2>About Me</h2>
+    <p>From an early age, I realized that engineering was a natural fit for me. I’ve always had a strong passion for mathematics and physics-chemistry, paired with a constant curiosity for technology—game consoles, computer games, and of course, cars. This balance between logical thinking and an interest in complex systems inevitably led me to the world of engineering.</p>
+
+    <p>When it came time to choose an academic path, I considered several fields, but ultimately chose Electrical and Computer Engineering. The broad scope of the course and its strong connection to technological innovation convinced me. Throughout my degree, I discovered where my true enthusiasm lies: automation, robotics, and computer vision. That was when I realized I wanted to apply technology to improve industrial processes—especially in the automotive industry, which has always fascinated me.</p>
+
+    <p>In the first year of my master’s, an opportunity arose that changed the course of my academic path: a research scholarship in computer vision. This experience gave me my first contact with an industrial environment and ultimately became the foundation of my master’s thesis. In this context, I developed a computer vision system that worked in conjunction with a PLC on a bottle production line. The goal was to detect misalignments in real time, preventing improper spraying of the inside of the bottles—a critical process to ensure the strength and safety of the final product.</p>
+
+    <p>After completing my degree, I joined the team responsible for the GreenAuto project as a research fellow, in collaboration with companies such as STREAK, F.Fonseca, and Stellantis. During this time, I deepened my skills in applied robotics by developing automated screwdriving systems and sticker placement solutions using robotic arms that autonomously adapted to the position of each part. I also worked on water mark detection on windshields and on the automatic classification of windshields by size, optimizing processes with a direct impact on the production line.</p>
+
+    <p>Today, I remain driven by the idea of using cutting-edge technology to solve real-world problems. My ambition is to contribute to the evolution of industry through automation, artificial intelligence, and intelligent systems—always with a curious mindset and a genuine desire to do better.</p>
+  </section>
+</main>
+
+  <footer>
+    <p>&copy; 2025 João Ferreira</p>
+  </footer>
+<script>
+  const toggleBtn = document.getElementById('toggle-theme');
+const icon = toggleBtn.querySelector('i');
+
+// Carrega o estado salvo
+if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light-mode');
+  icon.classList.remove('fa-sun');
+  icon.classList.add('fa-moon');  // Lua no modo light
+} else {
+  icon.classList.remove('fa-moon');
+  icon.classList.add('fa-sun');  // Sol no modo dark
+}
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
+
+  if (isLight) {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');  // Lua no modo light
+    localStorage.setItem('theme', 'light');
+  } else {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');   // Sol no modo dark
+    localStorage.setItem('theme', 'dark');
+  }
+});
+</script>
+<script>
+  const languageButton = document.getElementById('toggle-language');
+
+  function isEnglishPage() {
+    return window.location.pathname.includes('_en');
+  }
+
+  function getBaseFileName(path) {
+    return path.split('/').pop().replace('_en', '').replace('.html', '');
+  }
+
+  function switchLanguage() {
+    const base = getBaseFileName(window.location.pathname);
+    if (isEnglishPage()) {
+      localStorage.setItem('language', 'pt');
+      window.location.href = `${base}.html`;
+    } else {
+      localStorage.setItem('language', 'en');
+      window.location.href = `${base}_en.html`;
+    }
+  }
+
+  if (languageButton) {
+    languageButton.textContent = isEnglishPage() ? 'PT' : 'EN';
+    languageButton.addEventListener('click', switchLanguage);
+  }
+
+  // Redirecionamento automático ao entrar numa página
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language');
+    const base = getBaseFileName(window.location.pathname);
+
+    if (savedLang === 'en' && !isEnglishPage()) {
+      window.location.href = `${base}_en.html`;
+    }
+
+    if (savedLang === 'pt' && isEnglishPage()) {
+      window.location.href = `${base}.html`;
+    }
+  });
+</script>
+</body>
+</html>

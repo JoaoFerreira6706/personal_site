@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publications - João Ferreira</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index_en.html">João Ferreira</a></li>
+          <li><a href="sobre_en.html">About me</a></li>
+          <li><a href="publicacoes_en.html"class="active">Publications</a></li>
+          <li>
+            <div class="nav-buttons">
+              <button id="toggle-theme" class="botao">
+                <i class="fas fa-moon"></i>
+              </button>
+              <button id="toggle-language" class="botao idioma">EN</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+   <main>
+    <section class="publicacao">
+  <h2>Publications</h2>
+  
+ <div class="card-publicacao tese">
+  <div class="publicacao-header">
+    <i class="fas fa-graduation-cap"></i>
+    <h3>System for the detection of bottle
+ misalignments for a bottle spraying
+ system of a glass manufacturer</h3>
+  </div>
+
+  <p><strong>Author:</strong> João Ferreira</p>
+
+  <p><strong>Summary:</strong>The topic of this dissertation concerns a challenge faced by the equipment man
+ufacturer for the glass industry, Vidromecânica. The growing demand for efficiency
+ and innovation has driven the manufacturing industry to adopt advanced automation
+ solutions. In today's competitive environment, where consumer expectations are in
+creasingly high, companies are constantly seeking ways to optimize their processes and
+ improve the quality of their products.
+ The field of computer vision emerges as a crucial tool in this new era of industry,
+ where automated processes are becoming increasingly predominant, driving us toward
+ Industry 4.0.
+ This project aims to automate a spraying process that requires an integrated control
+ system. During this process, a substance is applied to the external surface of the bottles
+ to give them their final coating. These bottles are arranged in parallel lines, with
+ the sprayer moving through the empty spaces between these lines, spraying only the
+ outside. At this stage, a control system is essential to check if the bottles are correctly
+ positioned. Otherwise, the sprayer must be stopped before applying the substance,
+ thus avoiding potential health issues for the end consumers.
+ Moreover, automating the spraying process promises a range of significant benefits.
+ Among these, a substantial increase in operational efficiency is expected, resulting in
+ higher productivity and cost reduction. The precision and consistency provided by the
+ computer vision system will also contribute to improving the final product's quality,
+ ensuring a uniform finish on all bottles. Finally, by minimizing the waste of the sprayed
+ substance, the system will help optimize resources and the environmental sustainability
+ of the manufacturing process.
+ This work employs a computer vision system capable of capturing images using
+ an industrial camera with an Ethernet interface and detecting bottles frame by frame
+ through methods to be studied, such as the Hough transform, adapted for circle detec
+tion. Subsequently, possible misalignments are detected to prevent the substance from
+ being sprayed inside the bottles.
+ This dissertation was carried out as part of the VidroTec 4.0 project- Bottle Spray
+ing Control System, funded by the company Vidromecânica.</p>
+
+  <div class="botoes-publicacao">
+    <a href="ficheiros/Dissertação_João_Ferreira.pdf" target="_blank" class="botao">Read Dissertation</a>
+  </div>
+</div>
+
+  <div class="card-publicacao fade-in">
+    <h3>Single-Camera Mirror-Assisted Detection of Quality Marks for Automotive Windshield Control</h3>
+    <p><strong>Authors:</strong> Bruno Ferreira, João Ferreira, Mohammad Zarei, Paulo Menezes</p>
+    <p><strong>Published in::</strong> RTSI 2025 -  9º International Forum IEEE Research and Technologies for Society and Industry</p>
+    <p><strong>Summary:</strong> In today's industry, efficient and precise vision
+ systems that support robotic operations are essential to ensure
+ continuous and smooth production, and the automotive industry
+ is no exception. In this paper, we present a creative approach
+ for detecting and inspecting quality features on windshields
+ by coupling a single-camera with a programmable moving
+ mirror system. Our method addresses the challenges posed by
+ limited space and constraints for multi-camera setups that are
+ often overlooked in production environments. The experimental
+ apparatus of this system uses a camera with a 50mm focal
+ length lens that captures different areas of the windshields at
+ multiple positions via a precisely controlled mirror. We introduce
+ a calibration technique that uses homography-based distortion
+ correction to account for perspective changes caused by different
+ mirror positions. In addition, the algorithm includes an OCR
+ stage with an image filtering bank optimized for glass surfaces
+ that enables accurate code recognition under different windshield
+ types and curvatures. The experimental results show that the
+ system is capable of reliably recognizing and verifying quality
+ features. Compared to other scanning systems with multiple
+ cameras or robots, our approach offers significant advantages
+ in terms of cost efficiency, space savings and possible adaptation
+ to different configurations of production lines.</p>
+
+    <div class="botoes-publicacao">
+      <a href="ficheiros/PPS12___Quality_Mark_Detection___RTSI2025.pdf" target="_blank" class="botao">Read Article</a>
+    </div>
+  </div>
+
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 João Ferreira</p>
+  </footer>
+ <script>
+  const toggleBtn = document.getElementById('toggle-theme');
+const icon = toggleBtn.querySelector('i');
+
+// Carrega o estado salvo
+if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light-mode');
+  icon.classList.remove('fa-sun');
+  icon.classList.add('fa-moon');  // Lua no modo light
+} else {
+  icon.classList.remove('fa-moon');
+  icon.classList.add('fa-sun');  // Sol no modo dark
+}
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
+
+  if (isLight) {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');  // Lua no modo light
+    localStorage.setItem('theme', 'light');
+  } else {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');   // Sol no modo dark
+    localStorage.setItem('theme', 'dark');
+  }
+});
+</script>
+<script>
+  const languageButton = document.getElementById('toggle-language');
+
+  function isEnglishPage() {
+    return window.location.pathname.includes('_en');
+  }
+
+  function getBaseFileName(path) {
+    return path.split('/').pop().replace('_en', '').replace('.html', '');
+  }
+
+  function switchLanguage() {
+    const base = getBaseFileName(window.location.pathname);
+    if (isEnglishPage()) {
+      localStorage.setItem('language', 'pt');
+      window.location.href = `${base}.html`;
+    } else {
+      localStorage.setItem('language', 'en');
+      window.location.href = `${base}_en.html`;
+    }
+  }
+
+  if (languageButton) {
+    languageButton.textContent = isEnglishPage() ? 'PT' : 'EN';
+    languageButton.addEventListener('click', switchLanguage);
+  }
+
+  // Redirecionamento automático ao entrar numa página
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language');
+    const base = getBaseFileName(window.location.pathname);
+
+    if (savedLang === 'en' && !isEnglishPage()) {
+      window.location.href = `${base}_en.html`;
+    }
+
+    if (savedLang === 'pt' && isEnglishPage()) {
+      window.location.href = `${base}.html`;
+    }
+  });
+</script>
+</body>
+</html>

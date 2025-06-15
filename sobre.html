@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre Mim - João Ferreira</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-container">
+        <ul class="nav-list">
+          <li><a href="index.html">João Ferreira</a></li>
+          <li><a href="sobre.html"class="active">Sobre Mim</a></li>
+          <li><a href="publicacoes.html">Publicações</a></li>
+          <li>
+            <div class="nav-buttons">
+              <button id="toggle-theme" class="botao">
+                <i class="fas fa-moon"></i>
+              </button>
+              <button id="toggle-language" class="botao idioma">EN</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="fade-in">
+      <h2>Sobre Mim</h2>
+      <p>Desde cedo percebi que a minha ligação à Engenharia era natural. Sempre tive um gosto especial por matemática e físico-química e aliava isso a uma curiosidade constante por tecnologia, consolas, jogos de computador e, claro, carros. Esse equilíbrio entre raciocínio lógico e interesse por sistemas complexos levou-me, inevitavelmente, ao mundo da Engenharia.</p>
+
+      <p>Quando chegou o momento de escolher um percurso académico, embora tenha considerado várias áreas, optei por Engenharia Eletrotécnica e de Computadores. A abrangência do curso e as saídas profissionais ligadas à inovação tecnológica convenceram-me. Ao longo da licenciatura, fui descobrindo o meu verdadeiro entusiasmo: automação, robótica e visão por computador. Foi nesse momento que percebi que ambicionava aplicar tecnologia para melhorar processos industriais, especialmente ao nível da indústria automóvel, que sempre me fascinou.</p>
+
+      <p>No primeiro ano do mestrado surgiu uma oportunidade que mudou o rumo da minha formação: uma bolsa de investigação em visão por computador. Esta experiência possibilitou-me o primeiro contacto com o ambiente industrial e acabou por se tornar no tema da minha dissertação. Neste contexto, desenvolvi um sistema de visão por computador que funcionava em conjunto com um autómato numa linha de produção de garrafas. O objetivo era detetar desalinhamentos em tempo real, evitando a pulverização indevida do interior das garrafas — um processo crítico para garantir a resistência e segurança do produto final.</p>
+
+      <p>Após concluir o curso, integrei a equipa responsável pelo projeto GreenAuto, como bolseiro de investigação, em colaboração com empresas como a STREAK, F.Fonseca e Stellantis. Aqui aprofundei competências em robótica aplicada, desenvolvendo sistemas de aparafusamento automático e colocação de autocolantes com braços robóticos que se adaptavam autonomamente à posição das peças. Trabalhei também na deteção de marcas de água em pára-brisas e na classificação automática de pára-brisas por dimensão, otimizando processos com impacto direto na linha de produção.</p>
+
+      <p>Hoje, continuo motivado pela ideia de utilizar tecnologia de ponta para resolver problemas concretos. A minha ambição é contribuir para a evolução da indústria através da automação, inteligência artificial e sistemas inteligentes, sempre com um olhar curioso e uma vontade genuína de fazer melhor.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 João Ferreira</p>
+  </footer>
+<script>
+  const toggleBtn = document.getElementById('toggle-theme');
+const icon = toggleBtn.querySelector('i');
+
+// Carrega o estado salvo
+if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light-mode');
+  icon.classList.remove('fa-sun');
+  icon.classList.add('fa-moon');  // Lua no modo light
+} else {
+  icon.classList.remove('fa-moon');
+  icon.classList.add('fa-sun');  // Sol no modo dark
+}
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  const isLight = document.body.classList.contains('light-mode');
+
+  if (isLight) {
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');  // Lua no modo light
+    localStorage.setItem('theme', 'light');
+  } else {
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');   // Sol no modo dark
+    localStorage.setItem('theme', 'dark');
+  }
+});
+</script>
+<script>
+  const languageButton = document.getElementById('toggle-language');
+
+  function isEnglishPage() {
+    return window.location.pathname.includes('_en');
+  }
+
+  function getBaseFileName(path) {
+    return path.split('/').pop().replace('_en', '').replace('.html', '');
+  }
+
+  function switchLanguage() {
+    const base = getBaseFileName(window.location.pathname);
+    if (isEnglishPage()) {
+      localStorage.setItem('language', 'pt');
+      window.location.href = `${base}.html`;
+    } else {
+      localStorage.setItem('language', 'en');
+      window.location.href = `${base}_en.html`;
+    }
+  }
+
+  if (languageButton) {
+    languageButton.textContent = isEnglishPage() ? 'PT' : 'EN';
+    languageButton.addEventListener('click', switchLanguage);
+  }
+
+  // Redirecionamento automático ao entrar numa página
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('language');
+    const base = getBaseFileName(window.location.pathname);
+
+    if (savedLang === 'en' && !isEnglishPage()) {
+      window.location.href = `${base}_en.html`;
+    }
+
+    if (savedLang === 'pt' && isEnglishPage()) {
+      window.location.href = `${base}.html`;
+    }
+  });
+</script>
+</body>
+</html>
