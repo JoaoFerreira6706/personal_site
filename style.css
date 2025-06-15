@@ -374,12 +374,6 @@ nav {
   background-color: #64b5f6;
   box-shadow: 0 0 12px rgba(100, 181, 246, 0.9);
 }
-body.pagina-publicacoes {
-  transform: scale(1.35, 1.35); /* exemplo de zoom x e y */
-  transform-origin: top center;
-  /* Opcional: evitar que o conteúdo fique cortado */
-  overflow-x: hidden;
-}
 .projetos {
   max-width: 960px;
   margin: 2rem auto;
