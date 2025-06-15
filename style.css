@@ -446,3 +446,9 @@ nav {
 .contatos a:hover {
   color: #bbdefb;
 }
+body.pagina-publicacoes {
+  transform: scale(0.65, 0.65); /* exemplo de zoom x e y */
+  transform-origin: top center;
+  /* Opcional: evitar que o conteúdo fique cortado */
+  overflow-x: hidden;
+}
