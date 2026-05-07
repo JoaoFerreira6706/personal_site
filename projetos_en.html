@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projetos - João Ferreira</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <ul class="nav-list">
+            <li><a href="index_en.html">João Ferreira</a></li>
+            <li><a href="sobre_en.html">About me</a></li>
+            <li><a href="publicacoes_en.html">Publications</a></li>
+            <li><a href="projetos_en.html" class="active">Projects</a></li>
+            <li>
+              <div class="nav-buttons">
+                <button id="toggle-theme" class="botao">
+                  <i class="fas fa-moon"></i>
+                </button>
+                <button id="toggle-language" class="botao idioma">EN</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="fade-in">
+        <h2>Projects</h2>
+
+        <div class="grid-projetos">
+          <!-- PROJETO 1 -->
+          <div class="card-projeto">
+            <img src="images/bankist.png" alt="Projeto 1" />
+            <h3>Bank website</h3>
+            <p>
+              Development of an interactive web banking application as part of a
+              JavaScript course (Udemy, instructor Jonas Schmedtmann). The
+              project involved implementing all the logic in JavaScript,
+              starting from a pre-existing HTML and CSS structure. The
+              application allows users to view their bank statement with
+              transaction history, check the total account balance, and analyze
+              metrics such as deposits, withdrawals, and accumulated interest.
+              Dynamic functionalities were also developed, including transfers
+              between accounts, loan requests, and account deletion, with
+              automatic interface updates, demonstrating fundamental concepts of
+              DOM manipulation, arrays, events, and business logic.
+            </p>
+          </div>
+
+          <!-- PROJETO 2 -->
+          <div class="card-projeto">
+            <img src="images/pig_game.png" alt="Projeto 2" />
+            <h3>Dice game</h3>
+            <p>
+              Development of an interactive dice-based game as part of the same
+              JavaScript course (Udemy, instructor Jonas Schmedtmann),
+              responsible for implementing all the logic in JavaScript. The game
+              allows two players to accumulate points through successive dice
+              rolls, with the option to “hold” the accumulated value or risk
+              additional rolls. If a roll results in a 1, the player loses the
+              points for that turn and the turn passes to the opponent. The
+              objective is to reach 100 points first. This project helped
+              consolidate fundamental concepts such as DOM manipulation, state
+              management, event handling, and dynamic updating of visual
+              elements, including the use of images.
+            </p>
+          </div>
+
+          <!-- PROJETO 3 -->
+          <div class="card-projeto">
+            <img src="images/guess_my_number.png" alt="Projeto 3" />
+            <h3>Guess number game</h3>
+            <p>
+              Development of an interactive number-guessing game as part of the
+              JavaScript course (Udemy, instructor Jonas Schmedtmann), focusing
+              on implementing the logic in JavaScript on a pre-existing HTML and
+              CSS structure. The objective of the game is to guess a secret
+              number within a defined range using the fewest possible attempts.
+              For each guess, the system provides dynamic feedback indicating
+              whether the entered value is higher or lower than the target
+              number. This project helped consolidate concepts such as DOM
+              manipulation, input validation, event handling, conditional logic,
+              and real-time interface updates.
+            </p>
+          </div>
+
+          <!-- PROJETO 4 -->
+          <div class="card-projeto">
+            <img src="images/luxury_vehicles.png" alt="Projeto 4" />
+            <h3>Vehicle rental company interface</h3>
+            <p>
+              Development of a desktop application in Python, using the Tkinter
+              library, aimed at managing a vehicle rental company. The
+              application integrates a local SQL database for storing and
+              managing all information, including users, vehicles, rentals, and
+              financial data. An authentication system with user registration
+              and login was implemented, along with multiple functionalities
+              such as viewing available and rented vehicles, managing clients,
+              analyzing revenue, and identifying vehicles that require
+              maintenance or legal compliance. The system was developed in an
+              integrated manner, ensuring data consistency — for example, rented
+              vehicles are removed from the available list, and the
+              corresponding revenue is automatically reflected in the company’s
+              finances. Filtering mechanisms were also implemented to facilitate
+              navigation and information search, consolidating knowledge in
+              database management and graphical interface development.
+            </p>
+          </div>
+
+          <!-- PROJETO 5 -->
+          <div class="card-projeto">
+            <img src="images/jogo_4_em_linha.png" alt="Projeto 5" />
+            <h3>Connect four game</h3>
+            <p>
+              Development of a “Connect Four” game in C++ during university,
+              with the option to play between two human players or against the
+              computer. Interaction is text-based, where players specify the
+              column in which they want to place their piece. A complete game
+              logic was implemented, including victory checking, board
+              management, and adjustable difficulty levels, in which the
+              computer increases its strategy to block the opponent’s moves and
+              create opportunities to win. This project helped consolidate
+              skills in structured programming, algorithmic logic, flow control,
+              and basic artificial intelligence simulation.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 João Ferreira</p>
+    </footer>
+    <script>
+      const toggleBtn = document.getElementById("toggle-theme");
+      const icon = toggleBtn.querySelector("i");
+
+      // Carrega o estado salvo
+      if (localStorage.getItem("theme") === "light") {
+        document.body.classList.add("light-mode");
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon"); // Lua no modo light
+      } else {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun"); // Sol no modo dark
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        const isLight = document.body.classList.contains("light-mode");
+
+        if (isLight) {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon"); // Lua no modo light
+          localStorage.setItem("theme", "light");
+        } else {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun"); // Sol no modo dark
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    </script>
+    <script>
+      const languageButton = document.getElementById("toggle-language");
+
+      function isEnglishPage() {
+        return window.location.pathname.includes("_en");
+      }
+
+      function getBaseFileName(path) {
+        return path.split("/").pop().replace("_en", "").replace(".html", "");
+      }
+
+      function switchLanguage() {
+        const base = getBaseFileName(window.location.pathname);
+        if (isEnglishPage()) {
+          localStorage.setItem("language", "pt");
+          window.location.href = `${base}.html`;
+        } else {
+          localStorage.setItem("language", "en");
+          window.location.href = `${base}_en.html`;
+        }
+      }
+
+      if (languageButton) {
+        languageButton.textContent = isEnglishPage() ? "PT" : "EN";
+        languageButton.addEventListener("click", switchLanguage);
+      }
+
+      // Redirecionamento automático ao entrar numa página
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("language");
+        const base = getBaseFileName(window.location.pathname);
+
+        if (savedLang === "en" && !isEnglishPage()) {
+          window.location.href = `${base}_en.html`;
+        }
+
+        if (savedLang === "pt" && isEnglishPage()) {
+          window.location.href = `${base}.html`;
+        }
+      });
+    </script>
+  </body>
+</html>
